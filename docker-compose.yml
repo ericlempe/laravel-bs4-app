@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+    web:
+        build:
+            context: ./docker
+            dockerfile: Dockerfile
+        container_name: laravel-bs4-app
+        ports:
+            - "8077:80"
+            - "5174:5174"
+        volumes:
+            - ./:/var/www/html
+        restart: "always"
+    db:
+        image: mysql:8
+        container_name: db-laravel
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=laravel-bs4-app
+            - MYSQL_PASSWORD=root
+        ports:
+        - "3307:3306"
+        volumes:
+            - ./.docker/mysql/dbdata:/var/lib/mysql
+        restart: "always"
+

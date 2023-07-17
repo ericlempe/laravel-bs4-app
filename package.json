@@ -12,7 +12,8 @@
     },
     "dependencies": {
         "bootstrap": "^5.3.0",
-        "datatables.net-dt": "^1.13.4",
-        "font-awesome": "^4.7.0"
+        "datatables.net-bs4": "^1.13.4",
+        "font-awesome": "^4.7.0",
+        "sweetalert2": "^11.7.12"
     }
 }
